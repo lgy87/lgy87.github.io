@@ -63,8 +63,7 @@
 
   
     
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -93,18 +92,18 @@
 
 
 
-<meta name="description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks Moving: mouseover/out, mouseenter/leave当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, rela">
+<meta name="description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks 当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, relatedTarget当鼠标移动到一个元素上面时, 产生 mouseover 事件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sunflower">
+<meta property="og:title" content="Moving - mouseover&#x2F;out, mouseenter&#x2F;leave">
 <meta property="og:url" content="http://lgy87.github.io/2017/09/03/Moving-mouseover-out-mouseenter-leave/index.html">
 <meta property="og:site_name" content="sunflower">
-<meta property="og:description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks Moving: mouseover/out, mouseenter/leave当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, rela">
-<meta property="og:image" content="http://lgy87.github.io/2017/09/03/uploads/2017/11/mouseover-to-child@2x.png">
-<meta property="og:updated_time" content="2017-11-06T12:29:39.000Z">
+<meta property="og:description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks 当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, relatedTarget当鼠标移动到一个元素上面时, 产生 mouseover 事件">
+<meta property="og:image" content="http://lgy87.github.io/2017/09/03/uploads/2017/11/mouseover-mouseout@2x.png">
+<meta property="og:updated_time" content="2017-11-06T13:13:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sunflower">
-<meta name="twitter:description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks Moving: mouseover/out, mouseenter/leave当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, rela">
-<meta name="twitter:image" content="http://lgy87.github.io/2017/09/03/uploads/2017/11/mouseover-to-child@2x.png">
+<meta name="twitter:title" content="Moving - mouseover&#x2F;out, mouseenter&#x2F;leave">
+<meta name="twitter:description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks 当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, relatedTarget当鼠标移动到一个元素上面时, 产生 mouseover 事件">
+<meta name="twitter:image" content="http://lgy87.github.io/2017/09/03/uploads/2017/11/mouseover-mouseout@2x.png">
 
 
 
@@ -138,7 +137,7 @@
 
 
 
-  <title> | sunflower</title>
+  <title>Moving - mouseover/out, mouseenter/leave | sunflower</title>
   
 
 
@@ -294,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Moving - mouseover/out, mouseenter/leave</h1>
         
 
         <div class="post-meta">
@@ -342,9 +341,10 @@
 
       
         <p>原文链接: <a href="https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks" target="_blank" rel="external">https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks</a></p>
-<h1 id="Moving-mouseover-out-mouseenter-leave"><a href="#Moving-mouseover-out-mouseenter-leave" class="headerlink" title="Moving: mouseover/out, mouseenter/leave"></a>Moving: mouseover/out, mouseenter/leave</h1><p>当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节.</p>
+<p>当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节.</p>
 <h2 id="Mouseover-mouseout-relatedTarget"><a href="#Mouseover-mouseout-relatedTarget" class="headerlink" title="Mouseover/mouseout, relatedTarget"></a>Mouseover/mouseout, relatedTarget</h2><p>当鼠标移动到一个元素上面时, 产生 <strong>mouseover</strong> 事件; 当它离开元素时, 产生 <strong>mouseout</strong> 事件.</p>
-<p><img src="../uploads/2017/11/mouseover-to-child@2x.png" alt="mouseover-to-child"></p>
+<p><img src="../uploads/2017/11/mouseover-mouseout@2x.png" alt="mouseover-mouseout@2x"></p>
+<a id="more"></a>
 
       
     </div>
@@ -506,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Moving-mouseover-out-mouseenter-leave"><span class="nav-number">1.</span> <span class="nav-text">Moving: mouseover/out, mouseenter/leave</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mouseover-mouseout-relatedTarget"><span class="nav-number">1.1.</span> <span class="nav-text">Mouseover/mouseout, relatedTarget</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mouseover-mouseout-relatedTarget"><span class="nav-number">1.</span> <span class="nav-text">Mouseover/mouseout, relatedTarget</span></a></li></ol></div>
             
 
           </div>
