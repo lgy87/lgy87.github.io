@@ -92,19 +92,17 @@
 
 
 
-<meta name="description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks 当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, relatedTarget当鼠标移动到一个元素上面时, 产生 mouseover 事件">
+<meta name="description" content="JavaScript 面向对象1234function Person (name, age) &amp;#123;  this.name = name  this.age = age&amp;#125; 当我们 const person = new Person(&amp;quot;lgy&amp;quot;, 30) 的时候，到底发生了什么呢？ 123456789101112/* 伪码 */function Person (n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(译)鼠标移动事件(mouseover&#x2F;out, mouseenter&#x2F;leave)">
-<meta property="og:url" content="http://lgy87.github.io/2017/09/03/Moving-mouseover-out-mouseenter-leave/index.html">
+<meta property="og:title" content="sunflower">
+<meta property="og:url" content="http://lgy87.github.io/2018/01/11/JavaScript 面向对象-1/index.html">
 <meta property="og:site_name" content="sunflower">
-<meta property="og:description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks 当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, relatedTarget当鼠标移动到一个元素上面时, 产生 mouseover 事件">
+<meta property="og:description" content="JavaScript 面向对象1234function Person (name, age) &amp;#123;  this.name = name  this.age = age&amp;#125; 当我们 const person = new Person(&amp;quot;lgy&amp;quot;, 30) 的时候，到底发生了什么呢？ 123456789101112/* 伪码 */function Person (n">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://lgy87.github.io/uploads/2017/11/mouseover-mouseout@2x.png">
-<meta property="og:updated_time" content="2017-11-06T16:09:22.000Z">
+<meta property="og:updated_time" content="2018-01-11T15:04:26.449Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(译)鼠标移动事件(mouseover&#x2F;out, mouseenter&#x2F;leave)">
-<meta name="twitter:description" content="原文链接: https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks 当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节. Mouseover/mouseout, relatedTarget当鼠标移动到一个元素上面时, 产生 mouseover 事件">
-<meta name="twitter:image" content="http://lgy87.github.io/uploads/2017/11/mouseover-mouseout@2x.png">
+<meta name="twitter:title" content="sunflower">
+<meta name="twitter:description" content="JavaScript 面向对象1234function Person (name, age) &amp;#123;  this.name = name  this.age = age&amp;#125; 当我们 const person = new Person(&amp;quot;lgy&amp;quot;, 30) 的时候，到底发生了什么呢？ 123456789101112/* 伪码 */function Person (n">
 
 
 
@@ -132,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://lgy87.github.io/2017/09/03/Moving-mouseover-out-mouseenter-leave/"/>
+  <link rel="canonical" href="http://lgy87.github.io/2018/01/11/JavaScript 面向对象-1/"/>
 
 
 
 
 
-  <title>(译)鼠标移动事件(mouseover/out, mouseenter/leave) | sunflower</title>
+  <title> | sunflower</title>
   
 
 
@@ -294,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">(译)鼠标移动事件(mouseover/out, mouseenter/leave)</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -306,8 +304,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-03T11:36:00+08:00">
-                2017/09/03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-11T23:04:26+08:00">
+                2018/01/11
               </time>
             
 
@@ -341,28 +339,9 @@
       
 
       
-        <p>原文链接: <a href="https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks" target="_blank" rel="noopener">https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave#tasks</a></p>
-<p>当鼠标在DOM元素之间移动时, 会产生相应的鼠标事件. 现在让我们一起深入研究一下这些事件的细节.</p>
-<h2 id="Mouseover-mouseout-relatedTarget"><a href="#Mouseover-mouseout-relatedTarget" class="headerlink" title="Mouseover/mouseout, relatedTarget"></a>Mouseover/mouseout, relatedTarget</h2><p>当鼠标移动到一个元素上面时, 产生 <code>mouseover</code> 事件; 当它离开元素时, 产生 <code>mouseout</code> 事件.</p>
-<p><img src="/uploads/2017/11/mouseover-mouseout@2x.png" alt="mouseover-mouseout"></p>
-<a id="more"></a>
-<p>这些事件很特殊, 因为它们有一个 <code>relatedTarget</code> 属性.</p>
-<p>对于 <code>mouseover</code>:</p>
-<ul>
-<li><code>event.target</code> - 鼠标移上的那个元素</li>
-<li><code>event.relatedTarget</code> - 鼠标移出的那个元素(译者注: 鼠标从哪个元素过来的)</li>
-</ul>
-<p>对于 <code>mouseout</code> 正好相反:</p>
-<ul>
-<li><code>event.target</code> - 鼠标移出的那个元素</li>
-<li><code>event.relatedTarget</code> - 鼠标下的新的元素(即: 鼠标去往的那个元素)</li>
-</ul>
-<p>在下面的例子中每一个面部特征都是一个元素. 当你移动鼠标时, 你能在它下面的文本框中看到相应的鼠标事件.</p>
-<p>每个事件都含记录了它所在的元素以及它来自哪个元素.</p>
-<blockquote>
-<h4 id="relatedTarget-属性可以是-null"><a href="#relatedTarget-属性可以是-null" class="headerlink" title="relatedTarget 属性可以是 null"></a><code>relatedTarget</code> 属性可以是 <code>null</code></h4><p><code>relatedTarget</code> 属性可以是 <code>null</code><br>这是正常的. 这意味着鼠标并不是来自另一个元素, 而是从 window 之外来的. 或者是离开了 window.<br>当我们在代码中使用 <code>event.relatedTarget</code> 时应该时刻牢记这种可能性. 如果我们访问 <code>event.relatedTarget.tagName</code>, 此种情况下会抛出异常.</p>
-</blockquote>
-<h2 id="事件频率"><a href="#事件频率" class="headerlink" title="事件频率"></a>事件频率</h2><p>当鼠标移动时 <code>mousemove</code> 事件被触发. 但这并不意味着每一像素都会导致一个事件.</p>
+        <h1 id="JavaScript-面向对象"><a href="#JavaScript-面向对象" class="headerlink" title="JavaScript 面向对象"></a>JavaScript 面向对象</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们 <code>const person = new Person(&quot;lgy&quot;, 30)</code> 的时候，到底发生了什么呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 伪码 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = &#123;&#125;                     <span class="comment">// 创建一个新对象</span></span><br><span class="line">  <span class="keyword">this</span> = result                         <span class="comment">// </span></span><br><span class="line">  result.__proto__ = Person.prototype   <span class="comment">// 使 新创建 的result继承自Person [^1]</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 执行Person的函数体</span></span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age                        <span class="comment">// this =&gt; &#123;name: name, age: age, __proto__: Person.prototype&#125;</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>                           <span class="comment">// 把 this 指向的对象返回</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -399,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../../../07/10/Javascript-Standard-Style/" rel="next" title="JavaScript Standard Style">
-                <i class="fa fa-chevron-left"></i> JavaScript Standard Style
+              <a href="../../../../2017/09/06/lodash-v4.17/" rel="next" title="lodash 使用交流 v4.17.4">
+                <i class="fa fa-chevron-left"></i> lodash 使用交流 v4.17.4
               </a>
             
           </div>
@@ -408,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="../../06/lodash-v4.17/" rel="prev" title="lodash 使用交流 v4.17.4">
-                lodash 使用交流 v4.17.4 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -524,7 +499,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mouseover-mouseout-relatedTarget"><span class="nav-number">1.</span> <span class="nav-text">Mouseover/mouseout, relatedTarget</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#relatedTarget-属性可以是-null"><span class="nav-number">1.0.1.</span> <span class="nav-text">relatedTarget 属性可以是 null</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件频率"><span class="nav-number">2.</span> <span class="nav-text">事件频率</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-面向对象"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 面向对象</span></a></li></ol></div>
             
 
           </div>
