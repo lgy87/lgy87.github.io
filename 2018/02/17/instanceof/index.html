@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JS, instanceof, OO," />
 
 
 
@@ -92,17 +92,18 @@
 
 
 
-<meta name="description" content="JavaScript 面向对象1234function Person (name, age) &amp;#123;  this.name = name  this.age = age&amp;#125; 当我们 const person = new Person(&amp;quot;lgy&amp;quot;, 30) 的时候，到底发生了什么呢？ 123456789101112/* 伪码 */function Person (n">
+<meta name="description" content="asdfasdfaasdfasdf">
+<meta name="keywords" content="JS, instanceof, OO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sunflower">
-<meta property="og:url" content="http://lgy87.github.io/2018/01/11/JavaScript 面向对象-1/index.html">
+<meta property="og:title" content="JS instanceof 的本质">
+<meta property="og:url" content="http://lgy87.github.io/2018/02/17/instanceof/index.html">
 <meta property="og:site_name" content="sunflower">
-<meta property="og:description" content="JavaScript 面向对象1234function Person (name, age) &amp;#123;  this.name = name  this.age = age&amp;#125; 当我们 const person = new Person(&amp;quot;lgy&amp;quot;, 30) 的时候，到底发生了什么呢？ 123456789101112/* 伪码 */function Person (n">
+<meta property="og:description" content="asdfasdfaasdfasdf">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-11T15:04:26.449Z">
+<meta property="og:updated_time" content="2018-02-17T03:13:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sunflower">
-<meta name="twitter:description" content="JavaScript 面向对象1234function Person (name, age) &amp;#123;  this.name = name  this.age = age&amp;#125; 当我们 const person = new Person(&amp;quot;lgy&amp;quot;, 30) 的时候，到底发生了什么呢？ 123456789101112/* 伪码 */function Person (n">
+<meta name="twitter:title" content="JS instanceof 的本质">
+<meta name="twitter:description" content="asdfasdfaasdfasdf">
 
 
 
@@ -130,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://lgy87.github.io/2018/01/11/JavaScript 面向对象-1/"/>
+  <link rel="canonical" href="http://lgy87.github.io/2018/02/17/instanceof/"/>
 
 
 
 
 
-  <title> | sunflower</title>
+  <title>JS instanceof 的本质 | sunflower</title>
   
 
 
@@ -275,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://lgy87.github.io/2018/01/11/JavaScript 面向对象-1/">
+    <link itemprop="mainEntityOfPage" href="http://lgy87.github.io/2018/02/17/instanceof/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王云甫 & 金卫娜 & 李光耀">
@@ -292,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">JS instanceof 的本质</h1>
         
 
         <div class="post-meta">
@@ -304,8 +305,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-11T23:04:26+08:00">
-                2018/01/11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-17T11:10:39+08:00">
+                2018/02/17
               </time>
             
 
@@ -314,6 +315,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -339,9 +362,7 @@
       
 
       
-        <h1 id="JavaScript-面向对象"><a href="#JavaScript-面向对象" class="headerlink" title="JavaScript 面向对象"></a>JavaScript 面向对象</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当我们 <code>const person = new Person(&quot;lgy&quot;, 30)</code> 的时候，到底发生了什么呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 伪码 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = &#123;&#125;                     <span class="comment">// 创建一个新对象</span></span><br><span class="line">  <span class="keyword">this</span> = result                         <span class="comment">// </span></span><br><span class="line">  result.__proto__ = Person.prototype   <span class="comment">// 使 新创建 的result继承自Person [^1]</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 执行Person的函数体</span></span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age                        <span class="comment">// this =&gt; &#123;name: name, age: age, __proto__: Person.prototype&#125;</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>                           <span class="comment">// 把 this 指向的对象返回</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>asdfasdfa<br>asdf<br>asd<br>f</p>
 
       
     </div>
@@ -369,6 +390,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JS-instanceof-OO/" rel="tag"># JS, instanceof, OO</a>
+          
+        </div>
+      
 
       
       
@@ -378,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/06/lodash-v4.17/" rel="next" title="lodash 使用交流 v4.17.4">
-                <i class="fa fa-chevron-left"></i> lodash 使用交流 v4.17.4
+              <a href="/2018/01/11/JavaScript 面向对象-1/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -387,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/17/instanceof/" rel="prev" title="JS instanceof 的本质">
-                JS instanceof 的本质 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -439,17 +462,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -511,22 +525,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-面向对象"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 面向对象</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
