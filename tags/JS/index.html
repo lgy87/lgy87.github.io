@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS,instanceof,OO," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -92,18 +92,16 @@
 
 
 
-<meta name="description" content="JS 之父原本是 Scheme 程序员，在接到设计一门 123456function Person (name) &amp;#123;  this.name = name&amp;#125;const p = new Person(&quot;lgy&quot;)console.log(p instanceof Person)   // true p instanceof Person 时到底发生了什么呢？《You Don’t Kn">
-<meta name="keywords" content="JS,instanceof,OO">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS instanceof 的本质">
-<meta property="og:url" content="http://lgy87.github.io/2018/02/17/instanceof/index.html">
+<meta name="description" content="GZQ Official Team">
+<meta property="og:type" content="website">
+<meta property="og:title" content="sunflower">
+<meta property="og:url" content="http://lgy87.github.io/tags/JS/index.html">
 <meta property="og:site_name" content="sunflower">
-<meta property="og:description" content="JS 之父原本是 Scheme 程序员，在接到设计一门 123456function Person (name) &amp;#123;  this.name = name&amp;#125;const p = new Person(&quot;lgy&quot;)console.log(p instanceof Person)   // true p instanceof Person 时到底发生了什么呢？《You Don’t Kn">
+<meta property="og:description" content="GZQ Official Team">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-17T03:32:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS instanceof 的本质">
-<meta name="twitter:description" content="JS 之父原本是 Scheme 程序员，在接到设计一门 123456function Person (name) &amp;#123;  this.name = name&amp;#125;const p = new Person(&quot;lgy&quot;)console.log(p instanceof Person)   // true p instanceof Person 时到底发生了什么呢？《You Don’t Kn">
+<meta name="twitter:title" content="sunflower">
+<meta name="twitter:description" content="GZQ Official Team">
 
 
 
@@ -131,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://lgy87.github.io/2018/02/17/instanceof/"/>
+  <link rel="canonical" href="http://lgy87.github.io/tags/JS/"/>
 
 
 
 
 
-  <title>JS instanceof 的本质 | sunflower</title>
+  <title>Tag: JS | sunflower</title>
   
 
 
@@ -162,7 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -266,178 +264,44 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://lgy87.github.io/2018/02/17/instanceof/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王云甫 & 金卫娜 & 李光耀">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sunflower">
-    </span>
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h1>JS<small>Tag</small>
+      </h1>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2018/02/17/instanceof/" itemprop="url">
+              
+                <span itemprop="name">JS instanceof 的本质</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">JS instanceof 的本质</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-17T11:10:39+08:00">
-                2018/02/17
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-17T11:10:39+08:00"
+              content="2018/02/17" >
+          02-17
+        </time>
+      </div>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>JS 之父原本是 Scheme 程序员，在接到设计一门</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person(<span class="string">"lgy"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> Person)   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p><code>p instanceof Person</code> 时到底发生了什么呢？《You Don’t Know JS》书中给出了答案：</p>
-<p><strong>其实是在p的原型链上，依次查找Person.prototype, 如果找到，即返回true，否则返回false</strong></p>
-<p>我们实现一个 <strong>instanceof_ 函数</strong>, 实现类似的效果：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">instanceof_</span> (<span class="params">instance, ctor</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> prototypeOfCtor = ctor.prototype</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> prototype = instance.__proto__</span><br><span class="line">  <span class="keyword">while</span> (prototype) &#123;</span><br><span class="line">    <span class="keyword">if</span> (prototype === prototypeOfCtor) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    prototype = prototype.__proto__</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(instanceof_(p, Person))  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/JS/" rel="tag"># JS</a>
-          
-            <a href="/tags/instanceof/" rel="tag"># instanceof</a>
-          
-            <a href="/tags/OO/" rel="tag"># OO</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/01/11/JavaScript 面向对象-1/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -445,12 +309,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="uyan_frame"></div>
-    
-  </div>
-
 
         </div>
         
@@ -653,10 +511,10 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-
+  
 
   
 
@@ -682,10 +540,6 @@
   
     
 
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138409"></script>
-      <!-- UY END -->
     
   
 
